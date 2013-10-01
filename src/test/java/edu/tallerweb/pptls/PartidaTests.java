@@ -15,5 +15,27 @@ public class PartidaTests {
 				Resultado.GANA, jugadorUno.jugarCon(jugadorDos));
 
 	}
+	
+	@Test
+	public void quePapelRefutaSpock() {
+
+		Mano jugadorUno = new Mano(Forma.SPOCK);
+		Mano jugadorDos = new Mano(Forma.PAPEL);
+
+		assertEquals("Papel refuta Spock",
+				Resultado.PIERDE, jugadorUno.jugarCon(jugadorDos));
+
+	}
+	
+	@Test
+	public void empate() {
+
+		Mano jugadorUno = new Mano(Forma.PIEDRA);
+		Mano jugadorDos = new Mano(Forma.PIEDRA);
+
+		assertEquals("Empate",
+				Resultado.EMPATA, jugadorUno.jugarCon(jugadorDos));
+
+	}
 
 }
